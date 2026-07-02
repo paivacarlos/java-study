@@ -43,6 +43,21 @@ public class AritmetcsOperators {
             case 3:
                 System.out.println("--- executanding exercise 03 ---");
                 //Exercise 3: Create a program that asks for a student's grades on three exams and displays their arithmetic mean.
+
+                System.out.println("Digit the first grade: ");
+                double firstGradeInput = reader.nextDouble();
+
+                System.out.println("Digit the second grade: ");
+                double secondGradeInput = reader.nextDouble();
+
+                System.out.println("Digit the third grade: ");
+                double thirdGradeInput = reader.nextDouble();
+
+                double averageGrade = (firstGradeInput + secondGradeInput + thirdGradeInput) / 3;
+
+                System.out.println();
+                System.out.printf("Average of the grades: %.1f", averageGrade);
+
                 break;
 
             case 4:
