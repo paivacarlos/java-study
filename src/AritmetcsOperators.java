@@ -62,7 +62,18 @@ public class AritmetcsOperators {
 
             case 4:
                 System.out.println("--- executanding exercise 04 ---");
-                //Exercise 4: Ask for an integer and display the remainder of its division by 2 (using the % operator). (This allows you to determine whether the number is even or odd!)
+                //Exercise 4: Ask for an integer and display the remainder of its division by 2 (using the % operator).
+                //(This allows you to determine whether the number is even or odd!)
+
+                System.out.println("Digit the integer number: ");
+                int integerNumber = reader.nextInt();
+
+                if (integerNumber % 2 == 0 ) {
+                    System.out.printf("The number %d is even!", integerNumber);
+                } else {
+                    System.out.printf("The number %d is odd!", integerNumber);
+                }
+
                 break;
 
             case 5:
