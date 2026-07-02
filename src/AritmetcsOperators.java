@@ -29,6 +29,15 @@ public class AritmetcsOperators {
             case 2:
                 System.out.println("--- executanding exercise 02 ---");
                 //Exercise 2: Ask for a temperature in degrees Celsius and convert it to Fahrenheit using the formula: $F = C \times 1.8 + 32$.
+
+                System.out.println("What is the temperature?");
+                double temperatureInput = reader.nextDouble();
+
+                double fahrenheitConverter = (temperatureInput * 1.8) + 32;
+
+                System.out.println();
+                System.out.printf("Fahrenheit conversion: %.1f", fahrenheitConverter);
+
                 break;
 
             case 3:
