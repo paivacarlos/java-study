@@ -79,6 +79,13 @@ public class AritmetcsOperators {
             case 5:
                 System.out.println("--- executanding exercise 05 ---");
                 //Ask for an employee's current salary and apply a 10% increase using the *= operator, then display the new salary.
+
+                System.out.println("Please, digit your salary: ");
+                double salaryValue = reader.nextDouble();
+
+                salaryValue *= 1.10;
+
+                System.out.printf("Incremented salary: %.2f", salaryValue);
                 break;
 
             case 6:
