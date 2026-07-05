@@ -128,7 +128,20 @@ public class AritmetcsOperators {
 
             case 9:
                 System.out.println("--- executanding exercise 09 ---");
-                //Exercise 9: Create an entry validation system for a party. Ask for the user's age and whether they have parental authorization (by entering `true` or `false`). The program should display `true` if they are of legal age OR have authorization.
+                //Exercise 9: Create an entry validation system for a party.
+                // Ask for the user's age and whether they have parental authorization (by entering `true` or `false`).
+                // The program should display `true` if they are of legal age OR have authorization.
+
+                System.out.println("Digit the age: ");
+                int ageExer09Input = reader.nextInt();
+
+                System.out.println("Authorization parents: ");
+                boolean authorizationInput = reader.nextBoolean();
+
+                System.out.println(" ");
+                System.out.println(ageExer09Input >= 18 || authorizationInput);
+
+                break;
 
             case 10:
                 System.out.println("--- executanding exercise 10 ---");
