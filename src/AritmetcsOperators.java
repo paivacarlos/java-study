@@ -103,9 +103,15 @@ public class AritmetcsOperators {
 
             case 7:
                 System.out.println("--- executanding exercise 07 ---");
-                //
-                //652
-                //Exercise 7: Ask for the user's age and display `true` if they are 18 or older, and `false` otherwise (without using `if`; simply output the result of the comparison `age >= 18` using `System.out.println`).
+                //Exercise 7: Ask for the user's age and display `true` if they are 18 or older,
+                // and `false` otherwise (without using `if`; simply output the result of the comparison `age >= 18` using `System.out.println`).
+
+                System.out.println("Digit the age: ");
+                int ageInput = reader.nextInt();
+
+                System.out.println(" ");
+                System.out.println(ageInput >= 18);
+
                 break;
 
             case 8:
