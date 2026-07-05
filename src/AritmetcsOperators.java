@@ -146,6 +146,16 @@ public class AritmetcsOperators {
             case 10:
                 System.out.println("--- executanding exercise 10 ---");
                 //Exercise 10: Ask for two numbers and display `true` if they are different (`!=`) from each other.
+
+                System.out.println("Digit first integer value: ");
+                int firstIntValueInput = reader.nextInt();
+
+                System.out.println("Digit second integer value: ");
+                int secondIntValueInput = reader.nextInt();
+
+                System.out.println(" ");
+                System.out.println(firstIntValueInput != secondIntValueInput);
+
                 break;
 
             default:
