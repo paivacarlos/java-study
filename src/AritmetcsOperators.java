@@ -117,6 +117,13 @@ public class AritmetcsOperators {
             case 8:
                 System.out.println("--- executanding exercise 08 ---");
                 //Exercise 8: Ask the user to enter a number. The program should display `true` if the number is greater than 10 AND less than 50.
+                System.out.println("Digit the value: ");
+                double valueInput = reader.nextDouble();
+
+                System.out.println(" ");
+
+                System.out.println(valueInput >= 10 && valueInput <= 50);
+
                 break;
 
             case 9:
