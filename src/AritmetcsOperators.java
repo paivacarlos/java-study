@@ -91,6 +91,14 @@ public class AritmetcsOperators {
             case 6:
                 System.out.println("--- executanding exercise 06 ---");
                 //Exercise 6: Create an int variable x = 10;. Use the decrement operator (--) on it and then display the value in the terminal.
+
+                int intVariable = 10;
+                System.out.println("Value original " + intVariable);
+                System.out.println(" ");
+
+                intVariable--;
+                System.out.println("Value after the decrement operator: " + intVariable);
+
                 break;
 
             case 7:
