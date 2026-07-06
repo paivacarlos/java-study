@@ -158,6 +158,44 @@ public class AritmetcsOperators {
 
                 break;
 
+            case 11:
+                System.out.println("--- executanding exercise 11 ---");
+                // Exercise 11: O Classificador de Média (Encadeamento)
+                // - O que fazer: Peça a nota de duas provas de um aluno (use double) e calcule a média[cite: 223].
+                // - A Regra:
+                //   * Se a média for maior ou igual a 7.0, exiba "Aprovado"[cite: 224].
+                //   * Se a média for entre 5.0 (inclusive) e 6.9, exiba "Recuperação"[cite: 225].
+                //   * Se for menor que 5.0, exiba "Reprovado"[cite: 226].
+                // - Foco do treino: Praticar a estrutura do else if[cite: 226].
+
+                // Todo: Seu código aqui!
+
+                break;
+
+            case 12:
+                System.out.println("--- executanding exercise 12 ---");
+                // Exercise 12: O Validador de Triângulos (Lógica Combinada)
+                // - O que fazer: Peça para o usuário digitar três números inteiros que representam os lados de um triângulo (Lado A, Lado B e Lado C)[cite: 227].
+                // - A Regra: Para formar um triângulo válido, a soma de dois lados deve ser sempre maior que o terceiro lado[cite: 228].
+                //   Ou seja, o programa só exibe true se: (A + B > C) E (A + C > B) E (B + C > A)[cite: 229].
+                // - Desafio: Tente fazer isso exibindo apenas true ou false direto no println, sem usar if/else, combinando os operadores > e &&[cite: 230].
+
+                // Todo: Seu código aqui!
+
+                break;
+
+            case 13:
+                System.out.println("--- executanding exercise 13 ---");
+                // Exercise 13: O Simulador de Caixa Eletrônico (Escopo de Decisão)
+                // - O que fazer: Crie uma variável double saldo = 500.00;. Peça para o usuário digitar o valor que ele deseja sacar (use reader.nextDouble())[cite: 231, 232].
+                // - A Regra:
+                //   * Se o valor do saque for menor ou igual ao saldo, subtraia o valor do saldo e exiba: "Saque realizado! Saldo atual: R$ [novo saldo]" (use printf com %.2f)[cite: 233].
+                //   * Se o valor do saque for maior que o saldo disponível, exiba: "Saldo insuficiente!"[cite: 234].
+
+                // Todo: Seu código aqui!
+
+                break;
+
             default:
                 System.out.println("Invalid Option!");
         }
