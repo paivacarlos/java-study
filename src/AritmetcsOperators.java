@@ -168,7 +168,21 @@ public class AritmetcsOperators {
                 //   * Se for menor que 5.0, exiba "Reprovado"[cite: 226].
                 // - Foco do treino: Praticar a estrutura do else if[cite: 226].
 
-                // Todo: Seu código aqui!
+                System.out.println("Digit first grade: ");
+                double firstGradeExer11Input = reader.nextDouble();
+
+                System.out.println("Digit second grade: ");
+                double secondGradeExer11Inout = reader.nextDouble();
+                
+                double averageGradeExer11 = (firstGradeExer11Input + secondGradeExer11Inout) / 2;
+                
+                if (averageGradeExer11 >= 7) {
+                    System.out.printf("Approved: %.1f", averageGradeExer11);
+                } else if (averageGradeExer11 >= 5 && averageGradeExer11 <= 6.9) {
+                    System.out.printf("Recovery: %.1f", averageGradeExer11);
+                } else if ( averageGradeExer11 < 5) {
+                    System.out.printf("Failed: %.1f", averageGradeExer11);
+                }
 
                 break;
 
