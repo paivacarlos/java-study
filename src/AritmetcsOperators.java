@@ -218,7 +218,17 @@ public class AritmetcsOperators {
                 //   * Se o valor do saque for menor ou igual ao saldo, subtraia o valor do saldo e exiba: "Saque realizado! Saldo atual: R$ [novo saldo]" (use printf com %.2f)[cite: 233].
                 //   * Se o valor do saque for maior que o saldo disponível, exiba: "Saldo insuficiente!"[cite: 234].
 
-                // Todo: Seu código aqui!
+                double balance = 500.00;
+
+                System.out.println("Digit value to withdraw: ");
+                double valueWithdrawInput = reader.nextDouble();
+
+                if (valueWithdrawInput <= balance) {
+                    balance = balance - valueWithdrawInput;
+                    System.out.printf("Withdrawal successfully completed! Current balance: %.2f%n", balance);
+                } else {
+                    System.out.println("Insufficient funds!");
+                }
 
                 break;
 
