@@ -194,7 +194,19 @@ public class AritmetcsOperators {
                 //   Ou seja, o programa só exibe true se: (A + B > C) E (A + C > B) E (B + C > A)[cite: 229].
                 // - Desafio: Tente fazer isso exibindo apenas true ou false direto no println, sem usar if/else, combinando os operadores > e &&[cite: 230].
 
-                // Todo: Seu código aqui!
+                System.out.println("Digit first integer to create a triangle: ");
+                int firstIntegerTriangleInput = reader.nextInt();
+
+                System.out.println("Digit second integer to create a triangle: ");
+                int secondIntegerTriangleInput = reader.nextInt();
+
+                System.out.println("Digit third integer to create a triangle: ");
+                int thirdIntegerTriangleInput = reader.nextInt();
+
+                System.out.println(" ");
+                System.out.println((firstIntegerTriangleInput + secondIntegerTriangleInput > thirdIntegerTriangleInput) &&
+                                    (firstIntegerTriangleInput + thirdIntegerTriangleInput > secondIntegerTriangleInput) &&
+                                    (secondIntegerTriangleInput + thirdIntegerTriangleInput > firstIntegerTriangleInput));
 
                 break;
 
