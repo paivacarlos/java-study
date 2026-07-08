@@ -7,17 +7,17 @@ public class ExerciseLoops {
         int option;
 
         do {
-            System.out.println("\n--- MENU DE LAÇOS DE REPETIÇÃO ---");
-            System.out.println("1 - O Contador Regressivo (while)");
-            System.out.println("2 - A Tabuada (for)");
-            System.out.println("3 - O Somador de Notas (do-while)");
-            System.out.println("0  - Sair");
-            System.out.print("Escolha o exercício: ");
+            System.out.println("\n--- Menu of loops ---");
+            System.out.println("1 - Regressing counter (while)");
+            System.out.println("2 - Multiplication table (for)");
+            System.out.println("3 - Sum grades (do-while)");
+            System.out.println("0  - out");
+            System.out.print("Choose the exercise: ");
             option = reader.nextInt();
 
             switch (option) {
                 case 1:
-                    System.out.println("\n--- Exercício 14: Contador Regressivo ---");
+                    System.out.println("\n--- Exercise 01: Regressing counter ---");
                     // TODO: Peça um número inteiro positivo.
                     // TODO: Usando 'while', conte de forma regressiva até 0.
 
@@ -33,23 +33,32 @@ public class ExerciseLoops {
                     break;
 
                 case 2:
-                    System.out.println("\n--- Exercício 15: A Tabuada ---");
+                    System.out.println("\n--- Exercíse 02: Multiplication table ---");
                     // TODO: Peça um número inteiro qualquer.
                     // TODO: Usando 'for', exiba a tabuada dele de 1 a 10.
+
+                    System.out.println("Digit integer value to multiplication table: ");
+                    int valueInputMultiplicationTable = reader.nextInt();
+
+                    for (int i = 1; i <= 10; i++) {
+
+                        System.out.printf("%d x %d = %d%n", i, valueInputMultiplicationTable, (valueInputMultiplicationTable * i));
+                    }
+
                     break;
 
                 case 3:
-                    System.out.println("\n--- Exercício 16: Somador de Notas ---");
+                    System.out.println("\n--- Exercise 03: Sum grades ---");
                     // TODO: Use 'do-while' para pedir números até que o usuário digite 0.
                     // TODO: Exiba a soma total no final.
                     break;
 
                 case 0:
-                    System.out.println("Saindo do menu de loops. Até mais!");
+                    System.out.println("Get out of loops menu. See you later!!");
                     break;
 
                 default:
-                    System.out.println("Opção inválida! Tente novamente.");
+                    System.out.println("Invalid Option. Try Again!");
             }
         } while (option != 0);
 
