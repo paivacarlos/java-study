@@ -51,6 +51,25 @@ public class ExerciseLoops {
                     System.out.println("\n--- Exercise 03: Sum grades ---");
                     // TODO: Use 'do-while' para pedir números até que o usuário digite 0.
                     // TODO: Exiba a soma total no final.
+
+                    boolean control = true;
+                    double gradeValueInputSum = 0;
+
+                    do {
+
+                        System.out.println("Digit a grade: ");
+                        double gradeValueInput = reader.nextDouble();
+
+                        if (gradeValueInput == 0) {
+                            control = false;
+                        }
+
+                        gradeValueInputSum += gradeValueInput;
+
+                    } while (control);
+
+                    System.out.printf("Sum grades: %.2f%n", gradeValueInputSum);
+
                     break;
 
                 case 0:
