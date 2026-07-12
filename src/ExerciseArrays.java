@@ -21,6 +21,23 @@ public class ExerciseArrays {
                     // TODO [PT-BR]: Guarde essas notas em um Array tradicional de tamanho fixo (4 posições).
                     // TODO [PT-BR]: Use um laço (for ou foreach) para somar as notas e calcular a média aritmética final.
                     // TODO [PT-BR]: Exiba a média com duas casas decimais utilizando printf.
+
+                    double[] grades = new double[4];
+
+                    for (int i = 0; i < grades.length; i++) {
+
+                        System.out.printf("Digit the grade: %d%n", i + 1);
+                        grades[i] = reader.nextDouble();
+                    }
+
+                    double finalAverage = 0;
+
+                    for (double grade: grades) {
+                        finalAverage += grade;
+                    }
+
+                    System.out.printf("Final Average: %.2f%n", (finalAverage / grades.length));
+
                     break;
 
                 case 2:
