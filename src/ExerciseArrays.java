@@ -47,6 +47,36 @@ public class ExerciseArrays {
                     // TODO [PT-BR]: Use um laço para preencher o Array com os inputs do usuário.
                     // TODO [PT-BR]: Depois, peça para ele digitar um último número para "busca".
                     // TODO [PT-BR]: Varra o array e diga se esse número de busca está ou não presente dentro do Array.
+
+                    System.out.println("Hou many integer numbers dou you need to digit: ");
+                    int valueLargeIntegerNumberInput = reader.nextInt();
+
+                    int[] valueOfIntegerDigited = new int[valueLargeIntegerNumberInput];
+
+                    for (int i = 0; i < valueOfIntegerDigited.length; i++) {
+                        System.out.printf("Value integer to digit position %d%n", i);
+                        int valueDigited = reader.nextInt();
+
+                        valueOfIntegerDigited[i] = valueDigited;
+                    }
+
+                    System.out.println("Digit a integer number to search: ");
+                    int searchValue = reader.nextInt();
+
+                    boolean found = false;
+
+                    for (int i = 0; i < valueOfIntegerDigited.length; i++) {
+                        if ( valueOfIntegerDigited[i] == searchValue) {
+                            System.out.printf("Value digited exist: %d%n", searchValue);
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (!found) {
+                        System.out.printf("Value %d is not fond in the array. %n", searchValue);
+                    }
+
                     break;
 
                 case 3:
