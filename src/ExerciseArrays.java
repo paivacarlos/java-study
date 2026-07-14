@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ExerciseArrays {
@@ -85,6 +86,29 @@ public class ExerciseArrays {
                     // TODO [PT-BR]: Use um laço do-while para ficar pedindo nomes ao usuário e adicionando na lista (.add()).
                     // TODO [PT-BR]: O laço deve parar imediatamente quando o usuário digitar a palavra "STOP".
                     // TODO [PT-BR]: No final, use um laço foreach para exibir todos os nomes cadastrados, um por linha.
+
+                    reader.nextLine();
+
+                    ArrayList<String> namesArray = new ArrayList<>();
+                    boolean control = true;
+
+
+                    do {
+                        System.out.println("Digit the name: ");
+                        String nameInput = reader.nextLine();
+
+                        if(nameInput.equalsIgnoreCase("STOP")) {
+                            control = false;
+                        } else {
+                            namesArray.add(nameInput);
+                        }
+
+                    } while(control);
+
+                    for (String name: namesArray) {
+                        System.out.printf("Name digited: %s%n", name);
+                    }
+
                     break;
 
                 case 0:
