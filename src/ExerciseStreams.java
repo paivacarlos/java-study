@@ -48,6 +48,22 @@ public class ExerciseStreams {
                     System.out.println("\n--- Running Exercise 02 ---");
                     // TODO [PT-BR]: Crie uma lista com 4 nomes informados pelo usuário via Scanner.
                     // Use '.map()' para transformar todos os nomes para LETRAS MAIÚSCULAS e exiba-os com o '.forEach()'.
+
+                    reader.nextLine();
+
+                    ArrayList<String> namesFromInput = new ArrayList<>();
+
+                    for (int i = 0; i < 3; i++) {
+                        System.out.println("Digit the name: ");
+                        String nameOfInput = reader.nextLine();
+
+                        namesFromInput.add(nameOfInput);
+                    }
+
+                    namesFromInput.stream()
+                            .map(String::toUpperCase)
+                            .forEach(name -> System.out.println("Digited name in UpperCase: " + name));
+
                     break;
 
                 case 3:
