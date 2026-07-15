@@ -83,6 +83,18 @@ public class ExerciseStreams {
                     System.out.println("\n--- Running Exercise 04 ---");
                     // TODO [PT-BR]: Crie uma lista de Strings com vários nomes de frutas.
                     // Use '.filter()' para manter apenas as frutas que têm mais de 5 letras. Exiba o resultado.
+
+                    System.out.println();
+
+                    List<String> listOfFruits = List.of("Apple", "Banana", "Strawberry", "Grape", "Kiwi");
+
+                    System.out.println("Fruits with more than 5 letters: ");
+
+                    listOfFruits.stream()
+                            .filter(fruit -> fruit.length() > 5)
+                            .map(fruit -> String.format("The fruit is %s", fruit))
+                            .forEach(System.out::println);
+
                     break;
 
                 case 5:
