@@ -31,6 +31,17 @@ public class ExerciseStreams {
                     System.out.println("\n--- Running Exercise 01 ---");
                     // TODO [PT-BR]: Crie uma lista estática de números inteiros de 1 a 10.
                     // Use a Streams API com '.filter()' para coletar apenas os números pares e exiba o resultado.
+
+                    List<Integer> listOfNumbers = List.of(1, 2, 3, 4, 5 ,6 ,7, 8, 9, 10);
+
+                    System.out.print("Even numbers: ");
+
+                    listOfNumbers.stream()
+                            .filter(number -> number % 2 == 0)
+                            .forEach(number -> System.out.printf("%d ", number));
+
+                    System.out.println();
+
                     break;
 
                 case 2:
