@@ -70,6 +70,13 @@ public class ExerciseStreams {
                     System.out.println("\n--- Running Exercise 03 ---");
                     // TODO [PT-BR]: Crie uma lista de números inteiros (ex: 2, 3, 4, 5).
                     // Use '.map()' para calcular o quadrado de cada número (número * número) e exiba a nova lista.
+
+                    List<Integer> listOfIntegerNumbers = List.of(1, 2, 3, 4, 5 ,6 ,7, 8, 9, 10);
+
+                    listOfIntegerNumbers.stream()
+                            .map(number -> String.format("Square of %d = %d", number, (number * number)))
+                            .forEach(System.out::println);
+
                     break;
 
                 case 4:
