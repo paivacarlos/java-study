@@ -101,6 +101,27 @@ public class ExerciseStreams {
                     System.out.println("\n--- Running Exercise 05 ---");
                     // TODO [PT-BR]: Crie uma lista de preços (double) informados pelo usuário (digite 0 para parar).
                     // Use '.map()' para aplicar um desconto de 15% em todos os preços e exiba os novos valores formatados com 'printf' (%.2f).
+
+                    List<Double> listoOfDoubleValuesExer05Input = new ArrayList<>();
+                    boolean control = true;
+
+
+                    do {
+                        System.out.println("Dogit the double value: ");
+                        double valueDigitedExer05Input = reader.nextDouble();
+
+                        if (valueDigitedExer05Input == 0.0) {
+                            control = false;
+                        } else {
+                            listoOfDoubleValuesExer05Input.add(valueDigitedExer05Input);
+                        }
+
+                    } while(control);
+
+                    listoOfDoubleValuesExer05Input.stream()
+                            .map(value -> String.format("Original: RS %.2f | With discount: R$ %.2f", value, value - (value * 0.15)))
+                            .forEach(System.out::println);
+
                     break;
 
                 case 6:
