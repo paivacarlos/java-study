@@ -176,6 +176,24 @@ public class ExerciseStreams {
                     // TODO [PT-BR]: Peça as notas finais de 5 alunos.
                     // Use '.filter()' para capturar apenas as notas maiores ou iguais a 7.0 (Aprovados).
                     // No final da Stream, em vez de '.toList()', use a operação terminal '.count()' para exibir QUANTOS alunos foram aprovados.
+
+                    List<Double> finalGradesLitsExer09Input = new ArrayList<>();
+
+                    for (int i = 1; i <= 5; i++) {
+                        System.out.printf("Digit the final grade os student %d: ", i);
+                        double finalGradeInput = reader.nextDouble();
+
+                        System.out.println();
+
+                        finalGradesLitsExer09Input.add(finalGradeInput);
+                    }
+
+                    long numberApprovedGrades = finalGradesLitsExer09Input.stream()
+                            .filter(grade -> grade >= 7.0)
+                            .count();
+
+                    System.out.println("Number of approved students: " + numberApprovedGrades);
+
                     break;
 
                 case 10:
