@@ -143,9 +143,18 @@ public class ExerciseStreams {
 
                 case 7:
                     System.out.println("\n--- Running Exercise 07 ---");
-                    // TODO [PT-BR]: Crie uma lista de e-mails fictícios (ex: user1@gmail.com, user2@yahoo.com).
+                    // TODO [PT-BR]: Crie uma lista de e-mails fictícios (ex: "user1@gmail.com", user2@yahoo.com).
                     // Use '.map()' para extrair apenas o domínio dos e-mails (dica: use o método '.substring()' ou '.split("@")' da String).
                     // Exiba a lista com os domínios.
+
+                    List<String> allEmailList = List.of("user1@gmail.com", "user2@yahoo.com","user3@outlook.com", "user4@yahoo.com", "user5@icloud.com");
+
+                    List<String> emailDomainList = allEmailList.stream()
+                            .map(email -> email.split("@")[1]) // posição [0] pega tudo antes do "@", posição [1] pega depois do "@".
+                            .toList();
+
+                    System.out.println("Print domain emails: " + emailDomainList);
+
                     break;
 
                 case 8:
