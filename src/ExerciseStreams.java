@@ -201,6 +201,17 @@ public class ExerciseStreams {
                     // TODO [PT-BR]: Crie uma lista com valores numéricos double.
                     // Use '.map()' para transformar cada número em uma String formatada como moeda americana (ex: "USD 10.50").
                     // Salve em uma lista de Strings e exiba o resultado.
+
+                    List<Double> doubleValues = List.of(150.0, 620.50, 499.90, 1200.0, 80.0, 500.01);
+
+                    List<String> converterStringDoubleValues = doubleValues.stream()
+                            .map(value -> String.format("USD $%.2f", value))
+                            .toList();
+
+                    for (String value: converterStringDoubleValues) {
+                        System.out.println("Value converted: " + value);
+                    }
+
                     break;
 
                 case 0:
