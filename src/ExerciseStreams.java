@@ -129,6 +129,16 @@ public class ExerciseStreams {
                     // TODO [PT-BR]: O COMBO: Crie uma lista de números de 1 a 15.
                     // Use '.filter()' para pegar apenas os ímpares E DEPOIS use '.map()' para multiplicar esses ímpares por 10.
                     // Salve em uma nova lista usando '.toList()' e exiba.
+
+                    List<Integer> listOfIntegerExer06 = List.of(1, 2, 3, 4, 5 ,6 ,7, 8, 9, 10, 11, 12, 13, 14, 15);
+
+                    List<Integer> newListOfIntegerExer06 = listOfIntegerExer06.stream()
+                            .filter(number -> number % 2 != 0)
+                            .map( number -> number * 10)
+                            .toList();
+
+                    System.out.println("Odd number multiplied by 10: " + newListOfIntegerExer06);
+
                     break;
 
                 case 7:
