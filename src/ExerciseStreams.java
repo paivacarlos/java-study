@@ -162,6 +162,13 @@ public class ExerciseStreams {
                     // TODO [PT-BR]: Simule um sistema de e-commerce. Crie uma lista com saldos de compras de clientes (double).
                     // Use '.filter()' para manter apenas os clientes "VIP" (aqueles que gastaram mais de R$ 500.00).
                     // Exiba a lista filtrada pulando linhas com '%n'.
+
+                    List<Double> purchaseTotals = List.of(150.0, 620.50, 499.90, 1200.0, 80.0, 500.01);
+
+                    purchaseTotals.stream()
+                            .filter(vipCustomer -> vipCustomer > 500.00)
+                            .forEach(vipCutomer -> System.out.printf("Vip Purchase: R$ %.2f%n", vipCutomer));
+
                     break;
 
                 case 9:
