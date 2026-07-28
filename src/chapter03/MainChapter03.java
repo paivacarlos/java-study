@@ -26,5 +26,13 @@ public class MainChapter03 {
         System.out.printf("Balance %s: %.2f%n", account1.getHolderName(), account1.getBalance());
         System.out.printf("Balance %s: %.2f%n", account2.getHolderName(), account2.getBalance());
 
+        System.out.println();
+        System.out.println("======================//==================================");
+
+        BankAccount account3 = new BankAccount("12345-5", "Carlos Paiva", 890.50);
+
+        System.out.printf("Balance %s: %.2f%n", account3.getHolderName(), account3.getBalance());
+        System.out.println("Total accounts created: " + BankAccount.getTotalAccountCreated());
+
     }
 }

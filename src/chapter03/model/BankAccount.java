@@ -4,10 +4,20 @@ public class BankAccount {
     private String accountNumber;
     private String holderName;
     private double balance = 0.0;
+    private static int totalAccountCreated = 0;
 
     public BankAccount(String accountNumber, String holderName) {
+        this(accountNumber, holderName, 0.0);
+    }
+
+    public BankAccount(String accountNumber, String holderName, double inicialBalance) {
         this.accountNumber = accountNumber;
         this.holderName = holderName;
+        if (inicialBalance > 0) {
+            deposit(inicialBalance);
+        }
+
+        totalAccountCreated++;
     }
 
     public void deposit (double amount) {
@@ -17,6 +27,10 @@ public class BankAccount {
         } else {
             System.out.println("The deposit amount must be positive.");
         }
+    }
+
+    public static int getTotalAccountCreated() {
+        return totalAccountCreated;
     }
     
     public void withdraw (double amount) {
