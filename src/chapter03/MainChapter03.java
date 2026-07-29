@@ -1,6 +1,7 @@
 package chapter03;
 
 import chapter03.model.BankAccount;
+import chapter03.model.CheckingAccount;
 import chapter03.model.SavingsAccount;
 
 public class MainChapter03 {
@@ -45,6 +46,29 @@ public class MainChapter03 {
         System.out.println("Total accounts created: " + BankAccount.getTotalAccountCreated());
         account4.applyInterest();
         System.out.printf("Balance actual %s: %.2f%n", account4.getHolderName(), account4.getBalance());
+
+        System.out.println();
+        System.out.println("oop - 05  ======================//==================================");
+
+        // Criando uma Conta Corrente com R$ 100,00 de saldo inicial
+        CheckingAccount account5 = new CheckingAccount("55555-0", "Lucas Silva", 100.00);
+
+        System.out.printf("Holder: %s%n", account5.getHolderName());
+        System.out.printf("Real Balance: R$ %.2f%n", account5.getBalance());
+        System.out.printf("Overdraft Limit: R$ %.2f%n", account5.getOverdraftLimit());
+        System.out.printf("Total Available (Balance + Limit): R$ %.2f%n", account5.getTotalAvailableBalance());
+
+        System.out.println("\n--- Teste 1: Saque Válido (R$ 50,00) ---");
+        account5.withdraw(50.00); // Debita 50 + 2 de taxa = 52. Saldo final: R$ 48,00
+        System.out.printf("Current Real Balance: R$ %.2f%n", account5.getBalance());
+
+        System.out.println("\n--- Teste 2: Saque usando o Cheque Especial (R$ 100,00) ---");
+        account5.withdraw(100.00); // Debita 100 + 2 de taxa = 102. Saldo final: -R$ 54,00 (entrou no limite!)
+        System.out.printf("Current Real Balance: R$ %.2f%n", account5.getBalance());
+
+        System.out.println("\n--- Teste 3: Tentativa de Saque Estourando o Limite (R$ 500,00) ---");
+        account5.withdraw(500.00); // Tenta debitar 502, mas só restam 446 de limite. Deve negar!
+        System.out.printf("Current Real Balance: R$ %.2f%n", account5.getBalance());
 
     }
 }
