@@ -1,6 +1,7 @@
 package chapter03;
 
 import chapter03.model.BankAccount;
+import chapter03.model.SavingsAccount;
 
 public class MainChapter03 {
     public static void main(String[] args) {
@@ -27,12 +28,23 @@ public class MainChapter03 {
         System.out.printf("Balance %s: %.2f%n", account2.getHolderName(), account2.getBalance());
 
         System.out.println();
-        System.out.println("======================//==================================");
+        System.out.println("OOP - 02 ======================//==================================");
 
         BankAccount account3 = new BankAccount("12345-5", "Carlos Paiva", 890.50);
 
         System.out.printf("Balance %s: %.2f%n", account3.getHolderName(), account3.getBalance());
         System.out.println("Total accounts created: " + BankAccount.getTotalAccountCreated());
+
+        System.out.println();
+        System.out.println("oop - 03 ======================//==================================");
+
+        SavingsAccount account4 = new SavingsAccount("10205-0", "Patricia Scalco", 100.00, 0.05);
+
+        System.out.printf("Balance deposited %s: %.2f%n", account4.getHolderName(), account4.getBalance());
+        System.out.printf("Rate: %.2f%n", account4.getInterestRate());
+        System.out.println("Total accounts created: " + BankAccount.getTotalAccountCreated());
+        account4.applyInterest();
+        System.out.printf("Balance actual %s: %.2f%n", account4.getHolderName(), account4.getBalance());
 
     }
 }
