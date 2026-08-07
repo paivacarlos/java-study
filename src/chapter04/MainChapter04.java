@@ -3,6 +3,7 @@ package chapter04;
 import chapter04.contract.Taxeble;
 import chapter04.model.BankAccount;
 import chapter04.model.CheckingAccount;
+import chapter04.exception.BusinessException;
 
 public class MainChapter04 {
     public static void main(String[] args) {
@@ -23,5 +24,13 @@ public class MainChapter04 {
         // 5. Polimorfismo usando a Interface como Tipo da referência
         Taxeble taxableItem = checkingAcc; // Programar voltado para a Interface!
         System.out.printf("Tax via Interface Reference: R$ %.2f%n", taxableItem.calculateTax());
+
+        System.out.println("OOP - 06 ==========================================//======================================");
+
+        try{
+            checkingAcc.withdraw(10000.00);
+        }catch (BusinessException e) {
+            System.out.println("Businnes rule violation: " + e.getMessage());
+        }
     }
 }
