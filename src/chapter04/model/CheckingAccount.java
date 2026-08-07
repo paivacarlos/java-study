@@ -1,6 +1,7 @@
 package chapter04.model;
 
 import chapter04.contract.Taxeble;
+import chapter04.exception.BusinessException;
 
 public class CheckingAccount extends BankAccount implements Taxeble{
 
@@ -20,7 +21,7 @@ public class CheckingAccount extends BankAccount implements Taxeble{
             setBalance(getBalance() - totalDebit);
             System.out.println("Withdraw successfully completed.");
         } else {
-            System.out.println("Insufficient balance and overdraft limit.");
+            throw new BusinessException("Insufficient balance or invalid amount for withdraw.");
         }
     }
 
