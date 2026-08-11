@@ -2,7 +2,7 @@ package chapter03;
 
 import chapter03.model.BankAccount;
 import chapter03.model.CheckingAccount;
-import chapter03.model.SavingsAccount;
+import chapter03.model.SavingAccount;
 
 public class MainChapter03 {
     public static void main(String[] args) {
@@ -39,7 +39,7 @@ public class MainChapter03 {
         System.out.println();
         System.out.println("oop - 03 ======================//==================================");
 
-        SavingsAccount account4 = new SavingsAccount("10205-0", "Patricia Scalco", 100.00, 0.05);
+        SavingAccount account4 = new SavingAccount("10205-0", "Patricia Scalco", 100.00, 0.05);
 
         System.out.printf("Balance deposited %s: %.2f%n", account4.getHolderName(), account4.getBalance());
         System.out.printf("Rate: %.2f%n", account4.getInterestRate());

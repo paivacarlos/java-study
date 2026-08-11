@@ -1,36 +1,74 @@
 package chapter04;
 
 import chapter04.contract.Taxeble;
+import chapter04.exception.BusinessException;
 import chapter04.model.BankAccount;
 import chapter04.model.CheckingAccount;
-import chapter04.exception.BusinessException;
+import chapter04.model.SavingAccount;
+
+import java.util.List;
 
 public class MainChapter04 {
+
     public static void main(String[] args) {
-        System.out.println("--- Chapter 4: Abstract Classes and Interfaces ---");
+        System.out.println("========================================================================");
+        System.out.println("     CAPÍTULO 04: CLASSES ABSTRATAS, INTERFACES E EXCEÇÕES              ");
+        System.out.println("========================================================================");
 
-        // 1. Tentar dar 'new BankAccount(...)' gera ERRO DE COMPILAÇÃO!
-        // BankAccount acc = new BankAccount("101", "Erro"); // ❌ Proibido por ser abstract!
-
-        // 2. Instanciando uma CheckingAccount (concreta)
+        // -------------------------------------------------------------------------------------
+        // SEÇÃO 1: INSTANCIAÇÃO E CLASSES CONCRETAS
+        // -------------------------------------------------------------------------------------
+        // Nota: Tentar dar 'new BankAccount(...)' gera ERRO DE COMPILAÇÃO pois a classe é abstrata!
         CheckingAccount checkingAcc = new CheckingAccount("2001-X", "Lucas Silva", 1000.00);
+        SavingAccount savingsAcc = new SavingAccount("12345-6", "Carlos Paiva", 100.00);
 
-        // 3. Testando o método abstrato herdado
+        System.out.println("\n--- 1. Extratos Individuais das Contas ---");
         checkingAcc.printStatement();
+        savingsAcc.printStatement();
 
-        // 4. Testando o contrato da Interface Taxable
-        System.out.printf("Calculated Tax (1%%): R$ %.2f%n", checkingAcc.calculateTax());
+        // -------------------------------------------------------------------------------------
+        // SEÇÃO 2: CONTRATO DE INTERFACE (Taxable)
+        // -------------------------------------------------------------------------------------
+        System.out.println("\n--- 2. Contrato de Cálculo de Imposto (Interface Taxable) ---");
+        System.out.printf("Cálculo Direto de Imposto (Conta Corrente): R$ %.2f%n", checkingAcc.calculateTax());
 
-        // 5. Polimorfismo usando a Interface como Tipo da referência
-        Taxeble taxableItem = checkingAcc; // Programar voltado para a Interface!
-        System.out.printf("Tax via Interface Reference: R$ %.2f%n", taxableItem.calculateTax());
+        // Polimorfismo usando a Interface como o tipo de referência:
+        Taxeble taxableItem = checkingAcc;
+        System.out.printf("Imposto via Referência da Interface: R$ %.2f%n", taxableItem.calculateTax());
 
-        System.out.println("OOP - 06 ==========================================//======================================");
+        // -------------------------------------------------------------------------------------
+        // SEÇÃO 3: POLIMORFISMO COM STREAMS API (List<BankAccount>)
+        // -------------------------------------------------------------------------------------
+        System.out.println("\n--- 3. Polimorfismo via Stream API ---");
+        List<BankAccount> accounts = List.of(checkingAcc, savingsAcc);
 
-        try{
-            checkingAcc.withdraw(10000.00);
-        }catch (BusinessException e) {
-            System.out.println("Businnes rule violation: " + e.getMessage());
+        // Iterando pela lista de referência abstrata; cada conta executa seu próprio printStatement()
+        accounts.forEach(BankAccount::printStatement);
+
+        // -------------------------------------------------------------------------------------
+        // SEÇÃO 4: EXCEÇÕES DE DOMÍNIO (BusinessException)
+        // -------------------------------------------------------------------------------------
+        System.out.println("\n--- 4. Tratamento de Exceções (BusinessException) ---");
+
+        // Teste 1: Saque bem-sucedido dentro do limite + taxa
+        try {
+            System.out.println("Tentando realizar saque válido de R$ 500.00...");
+            checkingAcc.withdraw(500.00);
+            System.out.printf("Novo Saldo após o saque: R$ %.2f%n", checkingAcc.getBalance());
+        } catch (BusinessException e) {
+            System.out.println("Violação de regra de negócio: " + e.getMessage());
         }
+
+        // Teste 2: Saque inválido excedendo o limite do cheque especial (Dispara a Exceção)
+        try {
+            System.out.println("\nTentando realizar saque inválido de R$ 10.000,00...");
+            checkingAcc.withdraw(10000.00);
+        } catch (BusinessException e) {
+            System.out.println("Violação de regra de negócio: " + e.getMessage());
+        }
+
+        System.out.println("\n========================================================================");
+        System.out.println("                   EXECUÇÃO DO CAPÍTULO 04 CONCLUÍDA                    ");
+        System.out.println("========================================================================");
     }
 }
