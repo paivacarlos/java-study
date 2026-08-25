@@ -67,6 +67,35 @@ public class MainChapter04 {
             System.out.println("Violação de regra de negócio: " + e.getMessage());
         }
 
+        // -------------------------------------------------------------------------------------
+        // TESTES DE VALIDAÇÃO FAIL-FAST (CONSTRUTOR E DEPÓSITO)
+        // -------------------------------------------------------------------------------------
+                System.out.println("\n--- 5. Testes de Blindagem Fail-Fast ---");
+
+        // Cenário 1: Titular com texto em branco
+                try {
+                    System.out.println("Tentativa 1: Criando conta com titular em branco...");
+                    CheckingAccount invalidHolder = new CheckingAccount("1001-A", "   ", 100.0);
+                } catch (BusinessException e) {
+                    System.out.println("Erro Capturado: " + e.getMessage());
+                }
+
+        // Cenário 2: Saldo inicial negativo
+                try {
+                    System.out.println("\nTentativa 2: Criando conta com saldo inicial negativo...");
+                    CheckingAccount invalidBalance = new CheckingAccount("1002-B", "Carlos", -50.0);
+                } catch (BusinessException e) {
+                    System.out.println("Erro Capturado: " + e.getMessage());
+                }
+
+        // Cenário 3: Depósito com valor inválido
+                try {
+                    System.out.println("\nTentativa 3: Realizando depósito com valor zero ou negativo...");
+                    checkingAcc.deposit(-20.0);
+                } catch (BusinessException e) {
+                    System.out.println("Erro Capturado: " + e.getMessage());
+                }
+
         System.out.println("\n========================================================================");
         System.out.println("                   EXECUÇÃO DO CAPÍTULO 04 CONCLUÍDA                    ");
         System.out.println("========================================================================");
