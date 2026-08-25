@@ -1,4 +1,5 @@
 package chapter04.model;
+import chapter04.exception.BusinessException;
 
 public abstract class BankAccount {
     private String accountNumber;
@@ -11,8 +12,23 @@ public abstract class BankAccount {
     }
 
     public BankAccount(String accountNumber, String holderName, double initialBalance) {
+
+
+        if ( accountNumber == null || accountNumber.trim().isEmpty()) {
+            throw new BusinessException("Account number cannot be empty.");
+        }
+
+        if ( holderName == null || holderName.trim().isEmpty()) {
+            throw new BusinessException("Holder name cannot be empty.");
+        }
+
         this.accountNumber = accountNumber;
         this.holderName = holderName;
+
+        if (initialBalance < 0) {
+            throw new BusinessException("Initial balance cannot be negative.");
+        }
+
         if (initialBalance > 0) {
             deposit(initialBalance);
         }
